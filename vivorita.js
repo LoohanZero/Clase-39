@@ -64,8 +64,8 @@ while (sigue) {
             }
             else {
             tablero[iVivorita].splice((jVivorita), 1);
-            tablero[iVivorita].splice((jVivorita - 4), 1);
-            tablero[iVivorita].splice((jVivorita - 4), 0, '🐍');
+            tablero[iVivorita].splice((jVivorita - (iVivorita.length)), 1);
+            tablero[iVivorita].splice((jVivorita - (iVivorita.length)), 0, '🐍');
             tablero[iVivorita].splice((jVivorita), 0, '🌱');
             }
         }
@@ -91,7 +91,7 @@ while (sigue) {
 
         if (tablero[iVivorita][jVivorita - 1] === undefined) {
 
-            if (tablero[iVivorita][jVivorita + 4] === '🧱') {
+            if (tablero[iVivorita][jVivorita + (iVivorita.length)] === '🧱') {
                 alert(`No puede pasar porque hay una pared, intente otra opción.
             ${tablero[0]}
             ${tablero[1]}
@@ -103,8 +103,8 @@ while (sigue) {
             else {
                 tablero[iVivorita].splice((jVivorita), 1);
                 tablero[iVivorita].splice((jVivorita), 0, '🌱');
-                tablero[iVivorita].splice((jVivorita + 4), 1);
-                tablero[iVivorita].splice((jVivorita + 4), 0, '🐍');
+                tablero[iVivorita].splice((jVivorita + (iVivorita.length)), 1);
+                tablero[iVivorita].splice((jVivorita + (iVivorita.length)), 0, '🐍');
             }
 
             
@@ -131,7 +131,7 @@ while (sigue) {
     else if (pregunta === "ARRIBA") {
         if (tablero[iVivorita - 1] === undefined) {
 
-            if (tablero[iVivorita + 5][jVivorita] === '🧱') {
+            if (tablero[iVivorita + (tablero.length-1)][jVivorita] === '🧱') {
                 alert(`No puede pasar porque hay una pared, intente otra opción.
             ${tablero[0]}
             ${tablero[1]}
@@ -143,8 +143,8 @@ while (sigue) {
             else {
             tablero[iVivorita].splice((jVivorita), 1);  
             tablero[iVivorita].splice((jVivorita), 0, '🌱'); 
-            tablero[iVivorita + 5].splice(jVivorita, 1)
-            tablero[iVivorita + 5].splice(jVivorita, 0, '🐍');
+            tablero[iVivorita + (tablero.length-1)].splice(jVivorita, 1)
+            tablero[iVivorita + (tablero.length-1)].splice(jVivorita, 0, '🐍');
             }
         }
         else if (tablero[iVivorita - 1][jVivorita]  === '🧱') {
@@ -175,7 +175,7 @@ while (sigue) {
     else if (pregunta === "ABAJO") {
         if (tablero[iVivorita + 1] === undefined) {
 
-            if (tablero[iVivorita + 5][jVivorita] === '🧱') {
+            if (tablero[iVivorita + (tablero.length-1)][jVivorita] === '🧱') {
                 alert(`No puede pasar porque hay una pared, intente otra opción.
             ${tablero[0]}
             ${tablero[1]}
@@ -187,8 +187,8 @@ while (sigue) {
             else {
             tablero[iVivorita].splice((jVivorita), 1);  
             tablero[iVivorita].splice((jVivorita), 0, '🌱'); 
-            tablero[iVivorita - 5].splice(jVivorita, 1)
-            tablero[iVivorita - 5].splice(jVivorita, 0, '🐍');
+            tablero[iVivorita - (tablero.length-1)].splice(jVivorita, 1)
+            tablero[iVivorita - (tablero.length-1)].splice(jVivorita, 0, '🐍');
             }
         }
         else if (tablero[iVivorita + 1][jVivorita]  === '🧱') {
